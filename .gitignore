@@ -4,3 +4,8 @@ tmp/
 output/models/
 training.log
 output/submission.zip
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz

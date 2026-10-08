@@ -6,7 +6,8 @@ the assignment limits. No non-polynomial prediction model is used.
 
 ## Reproduce
 
-Use Python 3.12 and run from this directory:
+Use Python 3.12 and run from this directory. Report generation also requires
+`pdflatex` (MiKTeX or TeX Live) on PATH:
 
 ```powershell
 python -m pip install -r requirements.txt
@@ -19,12 +20,19 @@ The inputs are in `IMT2024073/`. Outputs are written to `output/`:
 
 - `IMT2024073_pred_var1.csv` and `IMT2024073_pred_var2.csv`: 1,000 rows each,
   a single `y` column, in the same row order as each test file.
-- `pdf/IMT2024073_report.pdf`: four-page assignment report.
+- `pdf/IMT2024073_report.pdf`: student report compiled with `pdflatex`.
 - `model_search.csv`: development cross-validation scores for every candidate.
 - `metrics.json`: selected settings and holdout evaluation.
 - `holdout_var1.csv` and `holdout_var2.csv`: actual and predicted holdout targets.
 - `models/`: serialized final models, refitted on all training rows.
 - `figures/`: report plots.
+
+The report source is `report.tex`. `build_report.py` regenerates the figures and
+runs `pdflatex` twice. To compile the existing figures and source directly:
+
+```powershell
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory=output/pdf -jobname=IMT2024073_report report.tex
+```
 
 **Submission format:** checked against `sample_submission.csv`: one `y` column
 and 1,000 rows. Filenames match the assignment naming convention.

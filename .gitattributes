@@ -4,5 +4,6 @@
 *.csv text eol=lf
 *.json text eol=lf
 *.txt text eol=lf
+*.tex text eol=lf
 *.pdf binary
 *.png binary
