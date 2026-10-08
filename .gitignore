@@ -1,0 +1,6 @@
+__pycache__/
+.venv/
+tmp/
+output/models/
+training.log
+output/submission.zip
