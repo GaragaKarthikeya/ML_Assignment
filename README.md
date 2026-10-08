@@ -78,3 +78,7 @@ python predict.py --model output/models/var2.joblib --test IMT2024073/IMT2024073
 Only load model files from a trusted source; joblib deserialization executes Python.
 
 The local repository is prepared for GitHub; pushing is handled by the student.
+
+The complete requirements and reproducibility audit is recorded in `AUDIT.md`.
+`verify_outputs.py` checks submission format, total degree, validation refits,
+metrics, direct polynomial evaluation and saved-model inference.
